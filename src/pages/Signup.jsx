@@ -19,8 +19,13 @@ const Signup = () => {
   return (
     <main className="web-container">
       <div className="signup-form-cont">
+
         <form className="signup" onSubmit={handleSubmit}>
           <h1>Signup</h1>
+
+          <div className="login-icon">
+            <img src="/icons/Sign-up.png" alt="sigup-icon" />
+          </div>
 
           <label>Learner's name:</label>
           <input 
@@ -53,14 +58,10 @@ const Signup = () => {
             value={password}   
           />
 
-          <button className="btn-signup" disabled={isLoading}>Sign Up Learner</button>
-          
+          <button className="btn-signup" disabled={isLoading}>Sign up a Learner</button>
+
           {error && <div className='err-mssg'>{error}</div>}
         </form>
-
-        <div className="login-icon">
-          <img src="/icons/Sign-up.png" alt="sigup-icon" />
-        </div>
       </div>
     </main>
   );

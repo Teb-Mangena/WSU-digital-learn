@@ -17,8 +17,15 @@ const Login = () => {
   return (
     <main className="web-container">
       <div className="login-form-cont">
+        
+
         <form className="login" onSubmit={handleSubmit}>
+
           <h1>Login</h1>
+
+          <div className="login-icon">
+            <img src="/icons/Login-bro.png" alt="login-icon" />
+          </div>
 
           <label>Email:</label>
           <input 
@@ -38,10 +45,6 @@ const Login = () => {
 
           {error && <div className="err-mssg">{error}</div>}
         </form>
-
-        <div className="login-icon">
-          <img src="/icons/Login-bro.png" alt="login-icon" />
-        </div>
       </div>
     </main>
   );

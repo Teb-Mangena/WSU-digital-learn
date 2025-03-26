@@ -1,15 +1,26 @@
+/* Overall container styling */
+.signup-form-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+  font-family: 'Segoe UI', sans-serif;
+  gap: 20px;
+}
 
-/* Styling for the form */
+/* Signup form styling */
 .signup {
   background-color: #ffffff;
   padding: 30px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   max-width: 400px;
   width: 100%;
 }
 
-/* Heading style */
+/* Form heading style */
 .signup h1 {
   font-size: 24px;
   margin-bottom: 20px;
@@ -29,7 +40,7 @@
 .signup input {
   width: 100%;
   padding: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   border: 1px solid #cccccc;
   border-radius: 5px;
   font-size: 14px;
@@ -42,18 +53,44 @@
 }
 
 /* Button styling */
-.signup button {
+.btn-signup {
   width: 100%;
   padding: 12px;
   border: none;
   border-radius: 5px;
-  background-color: #0f2936;
+  background-color: #007bff;
   color: #ffffff;
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.signup button:hover {
-  background-color: #0f0f10;
+.btn-signup:hover {
+  background-color: #0056b3;
+}
+
+.btn-signup:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Error message styling */
+.err-mssg {
+  color: #ff4c4c;
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Login icon container */
+.login-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-icon img {
+  max-width: 100px;
+  height: auto;
+  border-radius: 5px;
 }
