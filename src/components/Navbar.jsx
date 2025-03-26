@@ -13,6 +13,20 @@ const Navbar = () => {
           </div>
 
           {/* <!-- Navigation Links --> */}
+          <div className="login-div">
+            <ul className='login-nav'>
+              <li>
+                <a href="/login">Login</a>
+              </li>
+            </ul>
+          </div>
+
+          <div className="logout-div">
+            <button className='btn-logout'>
+              Logout
+            </button>
+          </div>
+
           <div className="if-logged-out">
             <ul className="nav-links">
               <li>

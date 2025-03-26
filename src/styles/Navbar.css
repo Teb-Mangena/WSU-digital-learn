@@ -1,16 +1,16 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif; /* Default font placeholder */
+/* Navbar.css */
+
+nav {
+  background-color: #000; /* Black background for modern aesthetics */
+  color: #fff; /* White text */
+  padding: 1rem;
 }
 
 .nav-container {
-  background-color: black;
-  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  flex-wrap: wrap; /* Ensures proper wrapping for smaller screens */
 }
 
 .site-title {
@@ -20,58 +20,106 @@ body {
 
 .site-title a {
   text-decoration: none;
-  color: white;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.5rem;
 }
 
-.site-title img {
-  height: 40px;
-  margin-right: 10px;
+.site-title .slogan {
+  font-style: italic;
+  font-size: 0.9rem;
+  margin-left: 0.5rem;
+  color: #ccc; /* Subtle gray for secondary text */
 }
 
-.slogan {
+img.wsu-logo {
+  width: 50px;
+  height: auto;
+  margin-right: 0.5rem;
+}
+
+.login-div ul {
+  list-style: none;
   margin: 0;
-  font-size: 14px;
-  color: white;
+  padding: 0;
 }
 
-.nav-links {
+.login-nav li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.logout-div .btn-logout {
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  border-radius: 15px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-div .btn-logout:hover {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.if-logged-out .nav-links {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
-  gap: 15px;
+  gap: 1rem;
+  flex-wrap: wrap; /* Wrap links for smaller screens */
 }
 
-.nav-links li {
-  margin: 0;
-}
-
-.nav-links a {
+.nav-links li a {
   text-decoration: none;
-  color: white;
-  padding: 5px 10px;
-  border-radius: 3px;
-  transition: background-color 0.3s ease;
+  color: #fff;
+  font-size: 1rem;
+  transition: color 0.3s ease;
 }
 
-.nav-links a:hover {
-  background-color: blue;
-  color: white;
+.nav-links li a:hover {
+  color: #ff5733; /* Modern touch with vibrant accent color */
 }
 
 .hamburger {
-  display: none;
-  font-size: 24px;
-  color: white;
+  font-size: 2rem;
   cursor: pointer;
+  color: #fff;
+  display: none; /* Hidden on larger screens */
 }
 
 @media (max-width: 768px) {
-  .nav-links {
-      display: none;
+  .login-div {
+    padding-top: 12px;
+  }
+
+  .logout-div {
+    padding-top: 8px;
+  }
+
+  .nav-container {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .if-logged-out {
+    display: none;
   }
 
   .hamburger {
-      display: block;
+    display: block; /* Display hamburger menu on smaller screens */
+  }
+
+  .nav-links {
+    display: none; /* Initially hidden for mobile menu */
+  }
+
+  .nav-links.active {
+    display: flex; /* Display links when the menu is active */
+    flex-direction: column;
   }
 }
