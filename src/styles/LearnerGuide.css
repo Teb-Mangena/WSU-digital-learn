@@ -1,0 +1,23 @@
+h1, h2 {
+    color: #2c3e50;
+}
+h1 {
+    text-align: center;
+}
+.container {
+    max-width: 800px;
+    padding: 40px;
+    margin: auto;
+}
+ul {
+    margin-left: 20px;
+}
+.image-container {
+    text-align: center;
+    margin: 20px 0;
+}
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}

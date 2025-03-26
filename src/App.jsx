@@ -6,11 +6,15 @@ import AdminDashboard from "./pages/AdminDashboard";
 import About from "./pages/About";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import LearnerGuide from "./pages/LearnerGuide";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <Navbar />
         <div className="pages">
           <Routes>
             <Route 
@@ -34,11 +38,16 @@ function App() {
             element={<AdminDashboard />}
             />
             <Route 
+            path='/learner-guide'
+            element={<LearnerGuide />}
+            />
+            <Route 
             path='/about'
             element={<About />}
             />
           </Routes>
         </div>
+        <Footer />
       </BrowserRouter>
     </div>
   );
