@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useSignup } from "../hooks/useSignup";
 import "../styles/forms/Signup.css";
 
 const Signup = () => {
@@ -6,12 +7,15 @@ const Signup = () => {
   const [lastName,setLastName] = useState('');
   const [email,setEmail] = useState('');
   const [password,setPassword] = useState('');
+  const {signup,isLoading,error} = useSignup();
 
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(name,lastName,email,password);
+    await signup(email,password);
   }
+
   return (
     <main className="web-container">
       <div className="signup-form-cont">
@@ -49,7 +53,9 @@ const Signup = () => {
             value={password}   
           />
 
-          <button>Sign Up Learner</button>
+          <button className="btn-signup" disabled={isLoading}>Sign Up Learner</button>
+          
+          {error && <div className='err-mssg'>{error}</div>}
         </form>
 
         <div className="login-icon">

@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { useLogout } from "../hooks/useLogout";
+import { useAuthContext } from "../hooks/useAuthContext";
 import '../styles/Navbar.css';
 
 const Navbar = () => {
@@ -7,6 +9,13 @@ const Navbar = () => {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+
+  const {user} = useAuthContext();
+  const {logout} = useLogout();
+
+  const handleLogout = () => {
+    logout();
+  }
 
   return (
     <>
@@ -21,19 +30,24 @@ const Navbar = () => {
 
           {/* <!-- Navigation Links --> */}
           <div className="loggs-container">
-            <div className="login-div">
-              <ul className='login-nav'>
-                <li>
-                  <a href="/login">Login</a>
-                </li>
-              </ul>
-            </div>
+            {!user && (
+              <div className="login-div">
+                <ul className='login-nav'>
+                  <li>
+                    <a href="/login">Login</a>
+                  </li>
+                </ul>
+              </div>
+            )}
 
-            <div className="logout-div">
-              <button className='btn-logout'>
-                Logout
-              </button>
-            </div>
+            {user && (
+              <div className="logout-div">
+                <span className="userName">{user.email}</span>
+                  <button className='btn-logout' onClick={handleLogout}>
+                    Logout
+                  </button>
+                </div>
+            )}
           </div>
 
           <div className={`if-logged-out ${menuOpen ? 'show' : 'hide'}`}>
