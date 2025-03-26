@@ -7,24 +7,26 @@ const Navbar = () => {
         <div className="nav-container">
           <div className="site-title">
             <a href="/">
-              <img className="wsu-logo" src="" alt="Walter-Sisulu-University" />
+              <img className="wsu-logo" src="/images/companies/WSU.jpg" alt="Walter-Sisulu-University" />
             </a>
             <p className="slogan">In pursuit of excellence</p>
           </div>
 
           {/* <!-- Navigation Links --> */}
-          <div className="login-div">
-            <ul className='login-nav'>
-              <li>
-                <a href="/login">Login</a>
-              </li>
-            </ul>
-          </div>
+          <div className="loggs-container">
+            <div className="login-div">
+              <ul className='login-nav'>
+                <li>
+                  <a href="/login">Login</a>
+                </li>
+              </ul>
+            </div>
 
-          <div className="logout-div">
-            <button className='btn-logout'>
-              Logout
-            </button>
+            <div className="logout-div">
+              <button className='btn-logout'>
+                Logout
+              </button>
+            </div>
           </div>
 
           <div className="if-logged-out">

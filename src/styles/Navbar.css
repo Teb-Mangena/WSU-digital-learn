@@ -1,9 +1,14 @@
 /* Navbar.css */
 
 nav {
-  background-color: #000; /* Black background for modern aesthetics */
-  color: #fff; /* White text */
-  padding: 1rem;
+  background-color: #000; 
+  color: #fff; 
+  padding: 0.6rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
 }
 
 .nav-container {
@@ -15,6 +20,7 @@ nav {
 
 .site-title {
   display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
@@ -28,14 +34,26 @@ nav {
 .site-title .slogan {
   font-style: italic;
   font-size: 0.9rem;
-  margin-left: 0.5rem;
+  margin: 0;
+  padding: 0;
   color: #ccc; /* Subtle gray for secondary text */
 }
 
 img.wsu-logo {
-  width: 50px;
-  height: auto;
+  width: 90px;
+  height: 40px;
   margin-right: 0.5rem;
+}
+
+.loggs-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  column-gap: 13px; /* Increased spacing */
+  padding: 1rem; /* Adds internal spacing */
+  margin-left: auto;
+  margin-right: 17px;
 }
 
 .login-div ul {
@@ -111,15 +129,52 @@ img.wsu-logo {
   }
 
   .hamburger {
-    display: block; /* Display hamburger menu on smaller screens */
+    display: block;
+    padding-top: 17px;
   }
+  
 
   .nav-links {
-    display: none; /* Initially hidden for mobile menu */
+    display: none; 
   }
 
   .nav-links.active {
     display: flex; /* Display links when the menu is active */
     flex-direction: column;
+  }
+}
+
+
+@media (max-width: 370px){
+  .site-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 15px;
+  }
+
+  img.wsu-logo {
+    width: 50px;
+    height: 20px;
+    margin-right: 0.5rem;
+  }
+
+  .site-title .slogan {
+    font-style: italic;
+    font-size: 0.6rem;
+    margin: 0;
+    padding: 0;
+    color: #ccc;
+  }
+
+  .login-nav li a {
+    font-size: small;
+  }
+
+  .logout-div .btn-logout {
+    border-radius: 13px;
+    padding: 0.3rem 0.6rem;
+    font-size: small;
+    margin-top: 8px;
   }
 }

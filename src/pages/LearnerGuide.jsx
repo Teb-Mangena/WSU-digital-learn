@@ -1,8 +1,9 @@
+import '../styles/shared/Container.css';
 import '../styles/LearnerGuide.css';
 
 const LearnerGuide = () => {
   return (
-    <>
+    <main className='web-container'>
       <div className="container">
 
         <h1>Digital Literacy Program</h1>
@@ -85,7 +86,7 @@ const LearnerGuide = () => {
           <li>Obtain Cisco Certifications</li>
         </ul>
       </div>
-    </>
+    </main>
   );
 };
 
