@@ -1,0 +1,22 @@
+.web-container {
+  max-width: 1200px;
+  margin: auto; /* Centers the container */
+  padding: 20px; 
+  margin-top: 55px;
+  background-color: #f8f8f8; /* Light background for the page */
+  color: #333; /* Text color */
+}
+
+.web-container h1 {
+  text-align: center; /* Center aligns the header */
+  font-size: 2rem; /* Larger font for emphasis */
+  font-weight: bold;
+  margin-bottom: 30px; /* Space below the heading */
+}
+
+.teams {
+  text-align: center;
+  font-size: 1.5rem; /* Slightly larger for team headings */
+  color: #444; /* Subtle color for section headings */
+  margin-bottom: 20px;
+}

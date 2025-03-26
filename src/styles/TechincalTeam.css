@@ -1,0 +1,69 @@
+.tech-team {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 20px; /* Space between team members */
+  padding: 20px;
+  background-color: #f4f4f9; /* Light background for subtle contrast */
+}
+
+.grid-project-manager {
+  background-color: #ffffff; /* Card background color */
+  border: 1px solid #ddd; /* Border for separation */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  padding: 15px;
+  text-align: center; /* Center content within the card */
+}
+
+.grid-project-manager h2 {
+  color: #333; /* Dark text for headings */
+  font-size: 1.4rem; /* Slightly larger heading size */
+  margin-bottom: 10px;
+}
+
+.sponsers-image {
+  width: 80px; /* Make the images smaller */
+  height: 80px; /* Ensure consistent size */
+  object-fit: cover; /* Maintain aspect ratio and crop excess */
+  border-radius: 50%; /* Circular image style for a modern look */
+  margin-bottom: 10px; /* Space below the image */
+}
+
+.div-info {
+  margin-top: 10px;
+}
+
+.div-info h3 {
+  color: #555; /* Medium shade for names */
+  font-size: 1.2rem; /* Highlight team members' names */
+  font-weight: bold;
+}
+
+.div-info p {
+  color: #777; /* Subtle font color for descriptions */
+  font-size: 1rem;
+  line-height: 1.5; /* Improve readability */
+}
+
+@media (max-width: 768px) {
+  .tech-team {
+    grid-template-columns: 1fr; /* Single-column layout for smaller screens */
+  }
+
+  .grid-project-manager {
+    padding: 10px;
+  }
+
+  .sponsers-image {
+    width: 60px; /* Smaller image size for small screens */
+    height: 60px;
+  }
+
+  .div-info h3 {
+    font-size: 1rem; /* Adjust heading size */
+  }
+
+  .div-info p {
+    font-size: 0.9rem; /* Adjust description size */
+  }
+}

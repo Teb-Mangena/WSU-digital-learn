@@ -1,0 +1,60 @@
+
+
+/* Styling for the form */
+.login {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  max-width: 350px;
+  width: 100%;
+}
+
+/* Heading style */
+.login h1 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333333;
+}
+
+/* Label styling */
+.login label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+  color: #444444;
+}
+
+/* Input field styling */
+.login input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 18px;
+  border: 1px solid #dcdcdc;
+  border-radius: 5px;
+  font-size: 14px;
+  outline: none;
+}
+
+.login input:focus {
+  border-color: #00aaff;
+  box-shadow: 0 0 5px rgba(0, 170, 255, 0.4);
+}
+
+/* Button styling */
+.login button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: #0f2936;
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login button:hover {
+  background-color: #101010;
+}

@@ -29,7 +29,7 @@ const Footer = () => {
         </div>
         <div class="footer-section">
           <h3>Sponsered by</h3>
-          <img className='sponser' src="//images/companies/BANKSETA.jpg" alt="BANKSETA" />
+          <img className='bankseta-image' src="/images/companies/BANKSETA.jpg" alt="BANKSETA" />
         </div>
       </div>
       <p class="copyright">&copy; 2025 Your Company. All rights reserved.</p>
