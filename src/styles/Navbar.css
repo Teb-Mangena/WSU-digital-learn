@@ -100,15 +100,96 @@ img.wsu-logo {
 }
 
 .nav-links li a:hover {
-  color: #ff5733; /* Modern touch with vibrant accent color */
+  color: #ff5733; 
 }
+
+/* .if-logged-out {
+  position: fixed; 
+  top: 85px; 
+  left: 0;
+  width: 100%; 
+  background-color: black; 
+  display: none; 
+  flex-direction: column; 
+  align-items: center;
+  padding: 1.5rem 0; 
+  gap: 15px; 
+  z-index: 99;
+  transition: opacity 0.3s ease, transform 0.3s ease; 
+  transform: translateY(-100%); 
+  opacity: 0; 
+}
+
+
+
+/* .nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column; 
+  gap: 10px;
+} */
+
+/* .nav-links li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: small;
+  font-weight: 450;
+  text-align: center; /* Center align text */
+  /* transition: color 0.3s ease-in-out; */
+/* }  */
+
+/* .nav-links li a:hover {
+  color: #1db954; /* Vibrant hover color for a fresh touch */
+/* } */ 
+
+.if-logged-out {
+  position: fixed; 
+  top: 85px; 
+  left: 0;
+  right: 0;
+  /* width: 100%;  */
+  background-color: black; 
+  display: none; 
+  flex-direction: column; 
+  align-items: center;
+  padding: 1.5rem 0; 
+  gap: 15px; 
+  z-index: 99;
+  transition: opacity 0.3s ease, transform 0.3s ease; 
+  transform: translateY(-100%); 
+  opacity: 0; 
+}
+
+.if-logged-out.show {
+  display: flex;
+  transform: translateY(0); 
+  opacity: 1;
+} 
 
 .hamburger {
   font-size: 2rem;
   cursor: pointer;
   color: #fff;
-  display: none; /* Hidden on larger screens */
+  display: block; /* Display for small screens */
 }
+
+@media (min-width: 768px) {
+  .if-logged-out {
+    display: flex; 
+    position: static; /* Default positioning */
+    flex-direction: column; /* Horizontal layout */
+    gap: 20px; /* Space between links */
+    transform: none; /* No slide-in effect */
+    opacity: 1; /* Fully visible */
+  }
+
+  .hamburger {
+    display: none; 
+  }
+}
+
 
 @media (max-width: 768px) {
   .login-div {

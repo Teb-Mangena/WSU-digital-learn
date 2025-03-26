@@ -1,6 +1,13 @@
+import { useState } from 'react';
 import '../styles/Navbar.css';
 
 const Navbar = () => {
+  const [menuOpen,setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <>
       <nav>
@@ -29,22 +36,22 @@ const Navbar = () => {
             </div>
           </div>
 
-          <div className="if-logged-out">
+          <div className={`if-logged-out ${menuOpen ? 'show' : 'hide'}`}>
             <ul className="nav-links">
               <li>
                 <a href="/">Home</a>
               </li>
               <li>
-                <a href="/about">About</a>
+                <a href="/learner-guide">Learner guide</a>
               </li>
               <li>
-                <a href="/learner-guide">Learner guide</a>
+                <a href="/about">About</a>
               </li>
             </ul>
           </div>
 
           {/* <!-- Hamburger Icon for Mobile --> */}
-          <div className="hamburger">☰</div>
+          <div className="hamburger" onClick={toggleMenu}>☰</div>
         </div>
       </nav>
     </>

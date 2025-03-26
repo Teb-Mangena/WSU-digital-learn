@@ -9,7 +9,7 @@ const LearnerGuide = () => {
         <h1>Digital Literacy Program</h1>
 
         <div className="image-container">
-          <img src="digital-literacy.jpg" alt="Digital Literacy Illustration" />
+          <img src="/images/companies/WSU2.jpg" alt="Digital Literacy Illustration" />
         </div>
 
         <h2>Program Overview</h2>
@@ -40,6 +40,10 @@ const LearnerGuide = () => {
           Grade 12 students preparing for online applications, banking, job
           seeking, and digital engagement.
         </p>
+
+        <div className="image-container">
+          <img className='graduation' src="/icons/students-pana.png" alt="Cybersecurity Awareness" />
+        </div>
 
         <h2>Key Learning Content and Timelines</h2>
         <ul>
@@ -76,7 +80,7 @@ const LearnerGuide = () => {
         </ul>
 
         <div className="image-container">
-          <img src="cybersecurity.jpg" alt="Cybersecurity Awareness" />
+          <img className='graduation' src="/icons/world-amico.png" alt="Cybersecurity Awareness" />
         </div>
 
         <h2>Certification Details and Criteria</h2>
@@ -85,7 +89,13 @@ const LearnerGuide = () => {
           <li>Score at least 80% on the final assessment</li>
           <li>Obtain Cisco Certifications</li>
         </ul>
+
+        <div className="image-container">
+          <img className='graduation' src="/icons/girl-graduate.png" alt="Cybersecurity Awareness" />
+        </div>
       </div>
+
+
     </main>
   );
 };
