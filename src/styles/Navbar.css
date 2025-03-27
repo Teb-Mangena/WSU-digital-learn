@@ -74,6 +74,7 @@ img.wsu-logo {
   border: 1px solid white;
   border-radius: 15px;
   padding: 0.5rem 1rem;
+  margin-left: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -160,6 +161,14 @@ img.wsu-logo {
   transition: opacity 0.3s ease, transform 0.3s ease; 
   transform: translateY(-100%); 
   opacity: 0; 
+}
+
+.userName {
+  cursor: pointer;
+}
+
+.userName:hover {
+  color: #ff5733;
 }
 
 .if-logged-out.show {
