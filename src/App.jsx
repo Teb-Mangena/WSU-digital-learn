@@ -1,5 +1,7 @@
-import { BrowserRouter,Routes,Route } from "react-router-dom";
-// pages and components
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { useAuthContext } from "./hooks/useAuthContext";
+
+// Pages and components
 import Home from "./pages/Home";
 import StudentDashboard from "./pages/StudentDashboard";
 import AdminDashboard from "./pages/AdminDashboard";
@@ -13,48 +15,59 @@ import Reviews from "./pages/Reviews";
 import Contact from "./pages/Contact";
 
 function App() {
+  const { user } = useAuthContext();
+
   return (
     <div className="App">
       <BrowserRouter>
         <Navbar />
         <div className="pages">
           <Routes>
-            <Route 
-            index
-            element={<Home />}
+            <Route index element={<Home />} />
+
+            {/* Login Route */}
+            <Route
+              path="/login"
+              element={
+                !user ? (
+                  <Login />
+                ) : user.role === "admin" ? (
+                  <Navigate to="/admin-dashboard" />
+                ) : (
+                  <Navigate to="/student-dashboard" />
+                )
+              }
             />
-            <Route 
-            path='/login'
-            element={<Login />}
+
+            {/* Signup - Only Admins can access */}
+            <Route
+              path="/signup"
+              element={
+                user && user.role === "admin" ? <Signup /> : <Navigate to="/login" />
+              }
             />
-            <Route 
-            path='/signup'
-            element={<Signup />}
+
+            {/* Student Dashboard */}
+            <Route
+              path="/student-dashboard"
+              element={
+                user && user.role === "user" ? <StudentDashboard /> : <Navigate to="/login" />
+              }
             />
-            <Route 
-            path='/student-dashboard'
-            element={<StudentDashboard />}
+
+            {/* Admin Dashboard */}
+            <Route
+              path="/admin-dashboard"
+              element={
+                user && user.role === "admin" ? <AdminDashboard /> : <Navigate to="/login" />
+              }
             />
-            <Route 
-            path='/admin-dashboard'
-            element={<AdminDashboard />}
-            />
-            <Route 
-            path='/learner-guide'
-            element={<LearnerGuide />}
-            />
-            <Route 
-            path='/about'
-            element={<About />}
-            />
-            <Route 
-            path='/contact'
-            element={<Contact />}
-            />
-            <Route 
-            path='/reviews'
-            element={<Reviews />}
-            />
+
+            {/* Other Routes */}
+            <Route path="/learner-guide" element={<LearnerGuide />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/reviews" element={<Reviews />} />
           </Routes>
         </div>
         <Footer />

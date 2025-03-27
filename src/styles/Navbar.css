@@ -232,6 +232,19 @@ img.wsu-logo {
     display: flex; /* Display links when the menu is active */
     flex-direction: column;
   }
+
+  .userName {
+    font-size: small;
+  }
+}
+
+@media (min-width:416){
+  .if-logged-out {
+    position: fixed; 
+    top: 160px; 
+    left: 0;
+    right: 0;
+  }
 }
 
 
@@ -266,5 +279,15 @@ img.wsu-logo {
     padding: 0.3rem 0.6rem;
     font-size: small;
     margin-top: 8px;
+  }
+
+}
+
+@media (max-width: 352px){
+  .if-logged-out {
+    position: fixed; 
+    top: 150px; 
+    left: 0;
+    right: 0;
   }
 }

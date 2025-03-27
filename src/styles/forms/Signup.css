@@ -1,47 +1,49 @@
-/* Overall container styling */
-.signup-form-cont {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background-color: #f9f9f9;
-  font-family: 'Segoe UI', sans-serif;
-  gap: 20px;
-}
-
-/* Signup form styling */
+/* Signup Form Container */
 .signup {
-  background-color: #ffffff;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
+  margin: 100px auto; /* 100px from the top */
+  max-width: 400px; /* Compact form size */
   width: 100%;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
 }
 
-/* Form heading style */
+/* Form Header */
 .signup h1 {
-  font-size: 24px;
-  margin-bottom: 20px;
   text-align: center;
-  color: #333333;
+  color: #333;
+  font-size: 20px;
+  margin-bottom: 15px;
 }
 
-/* Label styling */
+/* Login Icon Section */
+.login-icon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.login-icon img {
+  width: 50px;
+  height: 50px;
+}
+
+/* Label Styling */
 .signup label {
-  font-weight: bold;
-  margin-bottom: 8px;
   display: block;
-  color: #555555;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
 }
 
-/* Input field styling */
+/* Input Fields Styling */
 .signup input {
   width: 100%;
-  padding: 10px;
+  padding: 8px;
   margin-bottom: 15px;
-  border: 1px solid #cccccc;
+  border: 1px solid #ddd;
   border-radius: 5px;
   font-size: 14px;
   outline: none;
@@ -49,18 +51,19 @@
 
 .signup input:focus {
   border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.5);
 }
 
-/* Button styling */
+/* Signup Button */
 .btn-signup {
   width: 100%;
-  padding: 12px;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 0;
   border: none;
   border-radius: 5px;
-  background-color: #007bff;
-  color: #ffffff;
   font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -70,27 +73,48 @@
 }
 
 .btn-signup:disabled {
-  background-color: #cccccc;
+  background-color: #ddd;
   cursor: not-allowed;
 }
 
-/* Error message styling */
+/* Cancel Button */
+.close {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #007bff;
+  cursor: pointer;
+}
+
+.close:hover {
+  text-decoration: underline;
+}
+
+/* Error Message Styling */
 .err-mssg {
-  color: #ff4c4c;
-  margin-top: 10px;
+  color: #d9534f;
   font-size: 14px;
   text-align: center;
+  margin-top: 10px;
 }
 
-/* Login icon container */
-.login-icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .signup {
+    max-width: 90%;
+    padding: 15px;
+  }
 
-.login-icon img {
-  max-width: 100px;
-  height: auto;
-  border-radius: 5px;
+  .signup h1 {
+    font-size: 18px;
+  }
+
+  .signup input {
+    font-size: 12px;
+    padding: 7px;
+  }
+
+  .btn-signup {
+    font-size: 14px;
+  }
 }

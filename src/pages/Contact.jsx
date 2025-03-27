@@ -14,7 +14,7 @@ const Contact = () => {
         <div className="fsponser">
           <h3>Project Manager</h3>
           <div className="img-section">
-          <img className="sponsers-image" src="/images/sponsers/Dr Chulumanco Mgwebo.jpg " alt="Dr Chulumanco Mgwebo" />
+          <img className="sponsers-image" src="/images/sponsers/Mgwebo.jpg" alt="Dr Chulumanco Mgwebo" />
           </div>
           <div className="discription-section">
             <p>Dr Chulumanco Mgwebo (Lecture)</p>
@@ -28,7 +28,7 @@ const Contact = () => {
           <h3>Project Facilitator
           </h3>
           <div className="img-section">
-          <img className="sponsers-image" src="/images/sponsers/Mr N Lushaba.jpg" alt="Mr N Lushaba" />
+          <img className="sponsers-image" src="/images/sponsers/Lushaba.jpg" alt="Mr N Lushaba" />
           </div>
           <div className="discription-section">
             <p>Mr N Lushaba (Lecture)</p>

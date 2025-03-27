@@ -7,6 +7,8 @@ const Signup = () => {
   const [lastName,setLastName] = useState('');
   const [email,setEmail] = useState('');
   const [password,setPassword] = useState('');
+
+  
   const {signup,isLoading,error} = useSignup();
 
 
@@ -17,8 +19,8 @@ const Signup = () => {
   }
 
   return (
-    <main className="web-container">
-      <div className="signup-form-cont">
+
+      <>
 
         <form className="signup" onSubmit={handleSubmit}>
           <h1>Signup</h1>
@@ -62,8 +64,8 @@ const Signup = () => {
 
           {error && <div className='err-mssg'>{error}</div>}
         </form>
-      </div>
-    </main>
+      </>
+
   );
 };
 

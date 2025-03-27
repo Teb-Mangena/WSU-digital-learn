@@ -5,7 +5,7 @@ const SponserTeam = () => {
     <div className="grid-container">
       <div className="grid-project-manager">
         <h2>Project Manager</h2>
-        <img className="sponsers-image" src="/images/sponsers/Dr Chulumanco Mgwebo.jpg " alt="Dr Chulumanco Mgwebo" />
+        <img className="sponsers-image" src="/images/sponsers/Mgwebo.jpg " alt="Dr Chulumanco Mgwebo" />
         <div className="div-info">
           <h3>Dr Chulumanco Mgwebo (Lecturer)</h3>
           <p>Department of Marketing, Public Relations and Communications</p>
@@ -31,7 +31,7 @@ const SponserTeam = () => {
 
       <div className="grid-project-manager">
         <h2>Project Facilitator</h2>
-        <img className="sponsers-image" src="/images/sponsers/Mr N Lushaba.jpg" alt="Mr N Lushaba" />
+        <img className="sponsers-image" src="/images/sponsers/Lushaba.jpg" alt="Mr N Lushaba" />
         <div classNameName="div-info">
           <h3>Mr N Lushaba (Lecturer)</h3>
           <p>Department of Applied Informatics and Mathematical Sciences</p>
