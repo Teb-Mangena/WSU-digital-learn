@@ -42,7 +42,9 @@ const Navbar = () => {
 
             {user && (
               <div className="logout-div">
-                <span className="userName">{user.name}</span>
+                <span className="userName">
+                  {user.email}
+                </span>
                   <button className='btn-logout' onClick={handleLogout}>
                     Logout
                   </button>
@@ -55,16 +57,16 @@ const Navbar = () => {
               <li>
                 <a href="/">Home</a>
               </li>
-              {user && (
+              {user && user.role === "user" && (
                 <li>
                   <a href="/student-dashboard">Student dashboard</a>
                 </li>
               )}
-              {/* {user.role === "admin" && (
+              {user && user.role === "admin" && (
                 <li>
                   <a href="/admin-dashboard">Admin Dashboard</a>
                 </li>
-              )} */}
+              )}
               <li>
                 <a href="/learner-guide">Learner guide</a>
               </li>
