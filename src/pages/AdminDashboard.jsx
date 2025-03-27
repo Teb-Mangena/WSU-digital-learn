@@ -2,10 +2,13 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/users/AdminDashboard.css";
 import Signup from "./Signup";
+import { useLogout } from "../hooks/useLogout";
 
 const AdminDashboard = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openRegister, setOpenRegister] = useState(false);
+
+  const {logout} = useLogout();
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -14,6 +17,10 @@ const AdminDashboard = () => {
   const handleRegUser = () => {
     setOpenRegister(!openRegister);
   };
+
+  const LogoutUser = () => {
+    logout();
+  }
 
   return (
     <main className="web-container">
@@ -24,7 +31,8 @@ const AdminDashboard = () => {
           <div className="hamburger-admin" onClick={toggleMenu}>☰</div>
         </header>
 
-        {/* Sidebar */}
+        <div className="grid-admin-panel">
+          {/* Sidebar */}
         <div className={`sidebar ${menuOpen ? "active" : ""}`}>
           <ul>
             <li>
@@ -40,7 +48,7 @@ const AdminDashboard = () => {
               <Link to="/settings">Settings</Link>
             </li>
             <li>
-              <Link to="/logout">Logout</Link>
+              <Link to="/logout" onClick={LogoutUser}>Logout</Link>
             </li>
           </ul>
         </div>
@@ -55,6 +63,7 @@ const AdminDashboard = () => {
             <h2>Recent Activity</h2>
             <p>See the latest updates and actions taken on the platform.</p>
           </div>
+        </div>
         </div>
 
         {/* Register User Section */}
