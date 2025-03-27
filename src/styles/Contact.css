@@ -1,0 +1,88 @@
+.contact-sponsers {
+  max-width: 900px;
+  margin: auto;
+  margin-top: 15px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.sHeader {
+  font-size: 28px;
+  font-weight: bold;
+  color: blue;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.fsponser {
+  background: lightgray;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.fsponser h3 {
+  font-size: 22px;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.img-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+/* .sponsers-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid blue;
+} */
+
+.discription-section {
+  text-align: center;
+}
+
+.discription-section p {
+  margin: 5px 0;
+  font-size: 16px;
+  color: black;
+}
+
+.discription-section a {
+  text-decoration: none;
+  color: blue;
+  font-weight: bold;
+}
+
+.discription-section a:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  .fsponser {
+    flex-direction: row;
+    text-align: left;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .img-section {
+    margin-right: 20px;
+    margin-bottom: 0;
+  }
+
+  .discription-section {
+    text-align: left;
+  }
+}

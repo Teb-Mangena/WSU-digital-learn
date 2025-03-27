@@ -55,6 +55,16 @@ const Navbar = () => {
               <li>
                 <a href="/">Home</a>
               </li>
+              {user && (
+                <li>
+                  <a href="/student-dashboard">Student dashboard</a>
+                </li>
+              )}
+              {/* {user.role === "admin" && (
+                <li>
+                  <a href="/admin-dashboard">Admin Dashboard</a>
+                </li>
+              )} */}
               <li>
                 <a href="/learner-guide">Learner guide</a>
               </li>

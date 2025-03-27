@@ -9,7 +9,7 @@ const About = () => {
       <h1>About us</h1>
 
       <div className="sponsers">
-        <h3 className="teams">Technical Team</h3>
+        <h3 className="teams">Team</h3>
         <SponserTeam />
       </div>
       <div className="technicals">

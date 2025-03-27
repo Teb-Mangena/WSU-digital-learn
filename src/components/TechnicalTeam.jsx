@@ -11,8 +11,8 @@ const TechnicalTeam = () => {
           alt="Mrs sithandiwe twetwa-dube"
         />
         <div className="div-info">
-          <h3>Mrs sithandiwe twetwa-dube (Lecturer)</h3>
-          <p>Department of information communications and technology</p>
+          <h3>Mrs Sithandiwe Twetwa-dube (Lecturer)</h3>
+          <p>Department of Business and Application Development (ICT in App Dev) </p>
         </div>
       </div>
 
@@ -25,7 +25,7 @@ const TechnicalTeam = () => {
         />
         <div className="div-info">
           <h3>Mangena Tebatso (Student)</h3>
-          <p>Department of information communications and technology second year</p>
+          <p>Department of Business and Application Development (ICT in App Dev)</p>
         </div>
       </div>
 
@@ -38,7 +38,7 @@ const TechnicalTeam = () => {
         />
         <div className="div-info">
           <h3>Bavuma Kamva (Student)</h3>
-          <p>Department of information communications and technology second year</p>
+          <p>Department of Business and Application Development (ICT in App Dev)</p>
         </div>
       </div>
     </div>

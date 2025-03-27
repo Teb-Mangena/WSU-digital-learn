@@ -7,13 +7,13 @@ const SponserTeam = () => {
         <h2>Project Manager</h2>
         <img className="sponsers-image" src="/images/sponsers/Dr Chulumanco Mgwebo.jpg " alt="Dr Chulumanco Mgwebo" />
         <div className="div-info">
-          <h3>Dr Chulumanco Mgwebo (Lecture)</h3>
+          <h3>Dr Chulumanco Mgwebo (Lecturer)</h3>
           <p>Department of Marketing, Public Relations and Communications</p>
         </div>
       </div>
 
       <div className="grid-project-manager">
-        <h2>Sponser</h2>
+        <h2>Funder</h2>
         <img className="bankseta-image" src="/images/companies/BANKSETA.jpg" alt="BANKSETA" />
         <div className="div-info">
           <h3>BANKSETA</h3>
@@ -31,9 +31,9 @@ const SponserTeam = () => {
 
       <div className="grid-project-manager">
         <h2>Project Facilitator</h2>
-        <img className="sponsers-image" src="/images/sponsers/Mr N Lushaba.jpg" alt="Dr Chulumanco Mgwebo" />
+        <img className="sponsers-image" src="/images/sponsers/Mr N Lushaba.jpg" alt="Mr N Lushaba" />
         <div classNameName="div-info">
-          <h3>Mr N Lushaba (Lecture)</h3>
+          <h3>Mr N Lushaba (Lecturer)</h3>
           <p>Department of Applied Informatics and Mathematical Sciences</p>
         </div>
       </div>

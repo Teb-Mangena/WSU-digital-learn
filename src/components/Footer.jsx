@@ -23,12 +23,12 @@ const Footer = () => {
         </div>
         <div className="footer-section">
           <h3>Contact</h3>
-          <p>Email: example@example.com</p>
-          <p>Phone: +123 456 7890</p>
-          <p>Address: 123, Modern Street, City</p>
+          <p>Email: xpeter@wsu.ac.za</p>
+          <p>Phone: <a href="tel:+27474016254">047 401 6254</a></p>
+          <p>Address: Private Bag X3182, Butterworth, 4960 Eastern Cape, South Africa</p>
         </div>
         <div className="footer-section">
-          <h3>Sponsered by</h3>
+          <h3>Funded by</h3>
           <img className='bankseta-image' src="/images/companies/BANKSETA.jpg" alt="BANKSETA" />
         </div>
       </div>
