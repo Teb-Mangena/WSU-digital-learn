@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import "../styles/Home.css"; // Import CSS for styling
+import { useAuthContext } from "../hooks/useAuthContext";
+import "../styles/Home.css";
 
 const images = [
   "/images/learners/S1.jpg",
@@ -8,12 +9,14 @@ const images = [
 ];
 
 const Home = () => {
+  const { user } = useAuthContext();
+
   const [currentImage, setCurrentImage] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % images.length);
-    }, 5000); // Change image every 5 seconds
+    }, 5000); 
 
     return () => clearInterval(interval);
   }, []);
@@ -29,10 +32,10 @@ const Home = () => {
 
         {/* Hero Content */}
         <div className="hero-content">
-          <h1>Welcome to LearnHub</h1>
+          <h1 className="h1-intro">Welcome to WSU Digital learning platform</h1>
           <p>Your gateway to knowledge and innovation</p>
           <div className="buttons">
-            <a href="/signup" className="btn primary">Get Started</a>
+            {!user && <a href="/login" className="btn primary">Get Started</a>}
             <a href="/about" className="btn secondary">Learn More</a>
           </div>
         </div>
@@ -40,15 +43,15 @@ const Home = () => {
 
       {/* Features Section */}
       <div className="features">
-        <h2>Why Choose LearnHub?</h2>
+        <h2>Why Choose WSU Digital Learning platform?</h2>
         <div className="feature-list">
           <div className="feature">
             <h3>Interactive Courses</h3>
             <p>Engaging and interactive courses designed by experts.</p>
           </div>
           <div className="feature">
-            <h3>Live Sessions</h3>
-            <p>Learn from top educators in live virtual classrooms.</p>
+            <h3>Learning Sessions</h3>
+            <p>Learn from top educators</p>
           </div>
           <div className="feature">
             <h3>Certifications</h3>
