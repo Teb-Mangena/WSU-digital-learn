@@ -16,7 +16,7 @@ const RegisterUserPage = () => {
 
   return (
     <main className="web-container">
-      <h1>Register a Leaner</h1>
+      <h1>Register a Learner</h1>
       <div className="dashboard-container">
         <AdminHeader toggleMenu={toggleMenu} />
         <div className="grid-admin-panel">

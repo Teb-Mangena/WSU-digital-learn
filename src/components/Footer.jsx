@@ -23,7 +23,7 @@ const Footer = () => {
         </div>
         <div className="footer-section">
           <h3>Contact</h3>
-          <p>Email: xpeter@wsu.ac.za</p>
+          <p>Email: info.butterworth@wsu.ac.za</p>
           <p>Phone: <a href="tel:+27474016254">047 401 6254</a></p>
           <p>Address: Private Bag X3182, Butterworth, 4960 Eastern Cape, South Africa</p>
         </div>

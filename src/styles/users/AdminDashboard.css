@@ -1,3 +1,4 @@
+/* Dashboard Container */
 .dashboard-container {
   display: flex;
   flex-direction: column;
@@ -8,7 +9,7 @@
 .header {
   display: flex;
   align-items: center;
-  justify-content: flex-end; /* Adjusted for better alignment */
+  justify-content: flex-end;
   background-color: #333;
   color: #fff;
   padding: 10px 20px;
@@ -18,10 +19,71 @@
   display: none;
 }
 
+/* Admin Panel Grid */
 .grid-admin-panel {
   display: grid;
   grid-template-columns: 1fr 3fr;
-  gap: 20px; /* Added gap for spacing between columns */
+  gap: 20px;
+}
+
+/* All Users Section */
+.grid-box-users {
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 1200px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+.grid-box-users h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+.grid-box-users {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* Learner Item Styling */
+.learner-list {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.learner-list:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.learner-list ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.learner-list li {
+  font-size: 1rem;
+  padding: 5px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.learner-list li:last-child {
+  border-bottom: none;
+}
+
+.learner-list li b {
+  color: #007bff;
+  margin-right: 5px;
 }
 
 /* Sidebar Styles */
@@ -31,8 +93,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 20px; /* Added padding */
-  transition: transform 0.3s ease-in-out; /* Updated for animation */
+  padding: 20px;
+  transition: transform 0.3s ease-in-out;
 }
 
 .sidebar ul {
@@ -54,28 +116,29 @@
 
 .sidebar ul li:hover {
   background-color: #1abc9c;
-  cursor: pointer; /* Added pointer cursor */
+  cursor: pointer;
 }
 
 .sidebar.active {
-  transform: translateX(0); /* Used translate for smooth transition */
+  transform: translateX(0);
 }
 
 /* Main Content Styles */
 .main-content {
   flex: 1;
   margin-left: 20px;
-  background-color: #f9f9f9; /* Changed background color for contrast */
+  background-color: #f9f9f9;
   padding: 30px 20px;
-  border-radius: 10px; /* Added border radius for a polished look */
+  border-radius: 10px;
 }
 
+/* Card Component */
 .card {
   background-color: #fff;
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 8px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .card h2 {
@@ -85,10 +148,10 @@
 
 .card p {
   color: #666;
-  line-height: 1.6; /* Slightly improved line-height */
+  line-height: 1.6;
 }
 
-/* Register User Styles */
+/* Register User Component */
 .register-user {
   padding: 10px;
   text-align: center;
@@ -106,74 +169,7 @@
 
 .reg-user:hover {
   background-color: #0056b3;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Added subtle shadow */
-}
-
-.reg-learner h2 {
-  margin-bottom: 20px;
-}
-
-.reg-learner button {
-  margin-bottom: 20px;
-}
-
-.reg-learner {
-  opacity: 0;
-  transform: scale(0.95); /* Initial scaling */
-  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-.reg-learner.register-open {
-  display: block;
-  max-width: 400px;
-  margin: 20px auto; /* Centered with spacing */
-  padding: 20px;
-  border-radius: 10px;
-  background-color: rgba(0, 128, 255, 0.2);
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  opacity: 1;
-  transform: scale(1); /* Smooth scale back */
-  text-align: center;
-}
-
-.signup h1 {
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: #004080;
-}
-
-.signup label {
-  display: block;
-  margin: 10px 0 5px;
-  font-size: 14px;
-  color: #333;
-}
-
-.signup input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.signup input:focus {
-  border-color: #0066cc; /* Improved input focus */
-  outline: none;
-}
-
-.btn-signup {
-  background-color: #004080;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.btn-signup:hover {
-  background-color: #0066cc;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* Responsive Design */
@@ -206,9 +202,16 @@
   }
 
   .main-content {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    justify-content: center;
-    align-items: center;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .learner-list li {
+    font-size: 0.9rem;
+  }
+
+  .learner-list {
+    padding: 8px;
   }
 }

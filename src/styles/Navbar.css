@@ -238,14 +238,14 @@ img.wsu-logo {
   }
 }
 
-@media (min-width:416){
+/* @media (min-width:416){
   .if-logged-out {
     position: fixed; 
     top: 160px; 
     left: 0;
     right: 0;
   }
-}
+} */
 
 
 @media (max-width: 370px){
@@ -283,11 +283,17 @@ img.wsu-logo {
 
 }
 
-@media (max-width: 352px){
+/* @media (max-width: 352px){
   .if-logged-out {
     position: fixed; 
     top: 150px; 
     left: 0;
     right: 0;
+  }
+} */
+
+@media (max-width:436px){
+  .userName {
+    display: none;
   }
 }

@@ -32,6 +32,7 @@ const Home = () => {
 
         {/* Hero Content */}
         <div className="hero-content">
+          <h1 className="h1-intro">Pakamani High School |</h1>
           <h1 className="h1-intro">Welcome to WSU Digital learning platform</h1>
           <p>Your gateway to knowledge and innovation</p>
           <div className="buttons">
