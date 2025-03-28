@@ -15,6 +15,7 @@ import Reviews from "./pages/Reviews";
 import Contact from "./pages/Contact";
 import UserManagement from "./pages/AdminPages/UserManagement";
 import RegisterUserPage from "./pages/AdminPages/RegisterUserPage";
+import Activity from "./pages/AdminPages/Activity";
 
 
 function App() {
@@ -77,6 +78,13 @@ function App() {
               path="/register-user"
               element={
                 user && user.role === "admin" ? <RegisterUserPage /> : <Navigate to="/login" />
+              }
+            />
+
+            <Route
+              path="//activity"
+              element={
+                user && user.role === "admin" ? <Activity /> : <Navigate to="/login" />
               }
             />
 

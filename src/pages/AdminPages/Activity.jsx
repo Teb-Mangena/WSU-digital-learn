@@ -4,7 +4,7 @@ import { useLogout } from "../../hooks/useLogout";
 import AdminHeader from "../../components/admin-Components/AdminHeader";
 import AdminSidebar from "../../components/admin-Components/AdminSidebar";
 
-const UserManagement = () => {
+const Activity = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const { logout } = useLogout();
@@ -20,11 +20,11 @@ const UserManagement = () => {
         <AdminHeader toggleMenu={toggleMenu} />
         <div className="grid-admin-panel">
           <AdminSidebar menuOpen={menuOpen} logout={logout} />
-          <h2>All Users</h2>
+          <h2>All Activities</h2>
         </div>
       </div>
     </main>
   );
 };
 
-export default UserManagement;
+export default Activity;
