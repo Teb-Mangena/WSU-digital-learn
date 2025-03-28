@@ -13,6 +13,9 @@ import Footer from "./components/Footer";
 import LearnerGuide from "./pages/LearnerGuide";
 import Reviews from "./pages/Reviews";
 import Contact from "./pages/Contact";
+import UserManagement from "./pages/AdminPages/UserManagement";
+import RegisterUserPage from "./pages/AdminPages/RegisterUserPage";
+
 
 function App() {
   const { user } = useAuthContext();
@@ -60,6 +63,20 @@ function App() {
               path="/admin-dashboard"
               element={
                 user && user.role === "admin" ? <AdminDashboard /> : <Navigate to="/login" />
+              }
+            />
+
+            <Route
+              path="/user-management"
+              element={
+                user && user.role === "admin" ? <UserManagement /> : <Navigate to="/login" />
+              }
+            />
+
+            <Route
+              path="/register-user"
+              element={
+                user && user.role === "admin" ? <RegisterUserPage /> : <Navigate to="/login" />
               }
             />
 
