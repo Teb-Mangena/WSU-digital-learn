@@ -11,9 +11,6 @@ const Footer = () => {
               <a href="/about">About Us</a>
             </li>
             <li>
-              <a href="/services">Services</a>
-            </li>
-            <li>
               <a href="/policy">Privacy Policy</a>
             </li>
             <li>
@@ -32,7 +29,7 @@ const Footer = () => {
           <img className='bankseta-image' src="/images/companies/BANKSETA.jpg" alt="BANKSETA" />
         </div>
       </div>
-      <p className="copyright">&copy; 2025 Your Company. All rights reserved.</p>
+      <p className="copyright">&copy; 2025 WSU Digital Learning Platform. All rights reserved.</p>
     </footer>
   );
 };

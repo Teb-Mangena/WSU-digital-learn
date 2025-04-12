@@ -17,7 +17,7 @@ const Contact = () => {
           <img className="sponsers-image" src="/images/sponsers/Mgwebo.jpg" alt="Dr Chulumanco Mgwebo" />
           </div>
           <div className="discription-section">
-            <p>Dr Chulumanco Mgwebo (Lecture)</p>
+            <p>Dr Chulumanco Mgwebo (r)</p>
             <p>Department of Marketing, Public Relations and Communications</p>
             <p>Email : <a href="mailto:cmgweba@wsu.ac.za">cmgweba@wsu.ac.za</a></p>
             <p>Contact : <a href="tel:">0000000</a></p>
@@ -31,7 +31,7 @@ const Contact = () => {
           <img className="sponsers-image" src="/images/sponsers/Lushaba.jpg" alt="Mr N Lushaba" />
           </div>
           <div className="discription-section">
-            <p>Mr N Lushaba (Lecture)</p>
+            <p>Mr N Lushaba (Lecturer)</p>
             <p>Department of Applied Informatics and Mathematical Sciences</p>
             <p>Email : <a href="mailto:nlutshaba@wsu.ac.za">nlutshaba@wsu.ac.za</a></p>
             <p>Contact : <a href="tel:">0000000</a></p>

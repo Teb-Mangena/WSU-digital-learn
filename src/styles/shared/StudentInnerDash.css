@@ -1,0 +1,41 @@
+.students-inner-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #e9ecef;
+  border-bottom: 1px solid #ccc;
+  border-radius: 8px 8px 0 0;
+}
+
+.gobackIcon {
+  font-size: 1rem;
+  color: #007bff;
+  cursor: pointer;
+}
+
+.gobackIcon p {
+  margin: 0;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.studentsD {
+  text-align: center;
+}
+
+.studentsD h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #495057;
+  font-weight: bold;
+}
+
+/* STUDENT's COURSES */
+
+.student-courses {
+  background-color: #eee;
+  padding: 20px;
+  border-radius: 13px;
+  box-shadow: 4px 4px 4px rgba(0,0,0,0.1);
+}

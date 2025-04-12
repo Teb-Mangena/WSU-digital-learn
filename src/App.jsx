@@ -16,6 +16,10 @@ import Contact from "./pages/Contact";
 import UserManagement from "./pages/AdminPages/UserManagement";
 import RegisterUserPage from "./pages/AdminPages/RegisterUserPage";
 import Activity from "./pages/AdminPages/Activity";
+import MyAssignments from "./pages/Student/MyAssignments";
+import MyProfile from "./pages/Student/MyProfile";
+import MyCourses from "./pages/Student/MyCourses";
+import Quizz from "./pages/Student/Quizz";
 
 
 function App() {
@@ -82,9 +86,38 @@ function App() {
             />
 
             <Route
-              path="//activity"
+              path="/activity"
               element={
                 user && user.role === "admin" ? <Activity /> : <Navigate to="/login" />
+              }
+            />
+
+            {/* STUDENT DASHBOARD */}
+            <Route
+              path="/my-assignments"
+              element={
+                user && user.role === "user" ? <MyAssignments /> : <Navigate to="/login" />
+              }
+            />
+
+            <Route
+              path="/my-profile"
+              element={
+                user && user.role === "user" ? <MyProfile /> : <Navigate to="/login" />
+              }
+            />
+
+            <Route
+              path="/my-courses"
+              element={
+                user && user.role === "user" ? <MyCourses /> : <Navigate to="/login" />
+              }
+            />
+
+            <Route
+              path="/quizz"
+              element={
+                user && user.role === "user" ? <Quizz /> : <Navigate to="/login" />
               }
             />
 
