@@ -45,8 +45,9 @@ const UserManagement = () => {
         <AdminHeader toggleMenu={toggleMenu} />
         <div className="grid-admin-panel">
           <AdminSidebar menuOpen={menuOpen} logout={logout} />
-          <div className="grid-box-users">
+          <div className="grid-box-user">
           <h2>All Users</h2>
+          <div class="scroll-container">
           {learners &&
             learners.map((learner) => (
               <div className="learner-list" key={learner._id}>
@@ -59,6 +60,7 @@ const UserManagement = () => {
                 </ul>
               </div>
             ))}
+          </div>
             {error && <div className="error">{error}</div>}
             {isLoading && <div className="loading-spinner"></div>}
           </div>

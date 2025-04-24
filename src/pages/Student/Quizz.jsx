@@ -1,6 +1,10 @@
 import { Survey, SurveyModel } from "survey-react";
+import { useState } from "react";
+import '../../styles/forms/Quizz.css';
 
 const Quizz = () => {
+  const [score, setScore] = useState(null);
+
   const quizData = {
     questions: [
       {
@@ -20,7 +24,8 @@ const Quizz = () => {
         type: "radiogroup",
         name: "question2",
         title: "Which of the following is/are part of a computer?",
-        choices: ["Monitor", "CPU", "Keyboard", "All of the above"],
+        choices: [
+          "Monitor", "CPU", "Keyboard", "All of the above"],
         correctAnswer: "All of the above",
       },
       {
@@ -116,16 +121,25 @@ const Quizz = () => {
 
   return (
     <div className="web-container">
-      <Survey
-        model={surveyModel}
-        onComplete={(survey) => {
-          const userAnswers = survey.data;
-          const correctAnswers = quizData.questions.filter(
-            (question) => userAnswers[question.name] === question.correctAnswer
-          );
-          console.log("Correct answers:", correctAnswers.length);
-        }}
-      />
+      {score !== null ? (
+        <div className="perc-cont">
+          <h2>
+            You've got {score} out of {quizData.questions.length} (
+            {((score / quizData.questions.length) * 100).toFixed(1)}%)
+          </h2>
+        </div>
+      ) : (
+        <Survey
+          model={surveyModel}
+          onComplete={(survey) => {
+            const userAnswers = survey.data;
+            const correctAnswers = quizData.questions.filter(
+              (question) => userAnswers[question.name] === question.correctAnswer
+            );
+            setScore(correctAnswers.length);
+          }}
+        />
+      )}
     </div>
   );
 };

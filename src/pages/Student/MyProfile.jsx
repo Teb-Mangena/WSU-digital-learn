@@ -19,10 +19,9 @@ const MyProfile = () => {
       </div>
 
       <div className="stud-details">
-        <h4>Name: Student's Name</h4>
-        <h4>Surname : Student's Surname</h4>
+        <h4>Name: {user.name}</h4>
+        <h4>Surname : {user.lastName}</h4>
         <h4>Email address: {user.email}</h4>
-        <h4>Phone number: 123 456 7890</h4>
       </div>
     </main>
    );

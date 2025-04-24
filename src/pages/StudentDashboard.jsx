@@ -21,8 +21,8 @@ const StudentDashboard = () => {
 
     <section>
         <Link to='/quizz'>
-          <h2>Quizz</h2>
-          <p>View and manage your enrolled courses.</p>
+          <h2>Quiz 1</h2>
+          <p>Do uploaded quizes</p>
         </Link>
       </section>
 
