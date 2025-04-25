@@ -20,6 +20,7 @@ import MyAssignments from "./pages/Student/MyAssignments";
 import MyProfile from "./pages/Student/MyProfile";
 import MyCourses from "./pages/Student/MyCourses";
 import Quizz from "./pages/Student/Quizz";
+import Documents from "./pages/AdminPages/Documents";
 
 
 function App() {
@@ -82,6 +83,13 @@ function App() {
               path="/register-user"
               element={
                 user && user.role === "admin" ? <RegisterUserPage /> : <Navigate to="/login" />
+              }
+            />
+
+            <Route
+              path="/documents"
+              element={
+                user && user.role === "admin" ? <Documents /> : <Navigate to="/login" />
               }
             />
 

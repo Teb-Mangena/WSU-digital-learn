@@ -19,11 +19,11 @@ const MyCourses = () => {
       </div>
 
       <div className="content-learner">
-        <h3>{user.email}'s courses</h3>
+        <h3>{user.name} {user.lastName}'s enrolled courses</h3>
 
         <div className="student-courses">
 
-          {user && <div className="course-name">WSU DIGITAL LEARNER COURSE</div>}
+          {user && <div className="course-name">WSU DIGITAL LITERACY COURSE</div>}
 
         </div>
       </div>

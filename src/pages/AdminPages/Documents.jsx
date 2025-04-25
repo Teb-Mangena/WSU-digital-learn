@@ -1,12 +1,21 @@
-import { Link } from "react-router-dom";
-import "../../styles/users/MyAssignments.css";
-import "../../styles/shared/StudentInnerDash.css";
 import { useEffect, useState } from "react";
+import "../../styles/users/AdminDashboard.css";
+import { useLogout } from "../../hooks/useLogout";
+import AdminHeader from "../../components/admin-Components/AdminHeader";
+import AdminSidebar from "../../components/admin-Components/AdminSidebar";
 
-const MyAssignments = () => {
+const Documents = () => {
   const [documents,setDocuments] = useState([]);
   const [error,setError] = useState(false);
   const [isLoading,setIsLoading] = useState(false);
+
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const { logout } = useLogout();
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
 
   useEffect(()=>{
     async function fetchDocuments() {
@@ -30,20 +39,13 @@ const MyAssignments = () => {
 
   return (
     <main className="web-container">
-      <div className="students-inner-header">
-        <div className="gobackIcon">
-          <Link to="/student-dashboard">
-            <p>Go back</p>
-          </Link>
-        </div>
-        <div className="studentsD">
-          <h2>My Assignments</h2>
-        </div>
-      </div>
-
-      <h2>Study Materials</h2>
-
-      {isLoading && <div className="loading-spinner"></div>}
+      <h1>Uploaded Documents</h1>
+      <div className="dashboard-container">
+        <AdminHeader toggleMenu={toggleMenu} />
+        <div className="grid-admin-panel">
+          <AdminSidebar menuOpen={menuOpen} logout={logout} />
+          
+          {isLoading && <div className="loading-spinner"></div>}
       {error && <div className="err-mssg">{error}</div>}
       {documents && documents.map((document) => (
         <div key={document._id} className="added-work">
@@ -57,9 +59,10 @@ const MyAssignments = () => {
           <a href={document.link}>{document.link}</a>
         </div>
       ))}
-
+        </div>
+      </div>
     </main>
   );
 };
 
-export default MyAssignments;
+export default Documents;

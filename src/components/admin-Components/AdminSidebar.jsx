@@ -11,7 +11,10 @@ const AdminSidebar = ({ menuOpen, logout }) => {
           <Link to="/user-management">User Management</Link>
         </li>
         <li>
-          <Link to="/activity">Activities</Link>
+          <Link to="/activity">Upload Documents</Link>
+        </li>
+        <li>
+          <Link to="/documents">Manage Documents</Link>
         </li>
         <li>
           <Link to="/register-user">Register Learners</Link>
