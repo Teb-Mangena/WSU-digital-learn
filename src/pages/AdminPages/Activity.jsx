@@ -35,7 +35,7 @@ const Activity = () => {
       }
 
       try {
-        const response = await fetch('/api/documents', {
+        const response = await fetch('https://wsu-digital-73907ca0e2b2.herokuapp.com/api/documents', {
           method: 'POST',
           body: formData,
         });
@@ -66,7 +66,7 @@ const Activity = () => {
 
   return (
     <main className="web-container">
-      <h1>User Management</h1>
+      <h1>Upload Documents</h1>
       <div className="dashboard-container">
         <AdminHeader toggleMenu={toggleMenu} />
         <div className="grid-admin-panel">

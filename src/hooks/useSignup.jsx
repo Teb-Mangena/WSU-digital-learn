@@ -4,12 +4,14 @@ import { useAuthContext } from "./useAuthContext";
 export const useSignup = () => {
   const [error,setError] = useState(null);
   const [isLoading,setIsLoading] = useState(null);
+  const [success,setSuccess] = useState(null);
+
   const { dispatch } = useAuthContext();
 
   const signup = async (name,lastName,email,password) => {
     setIsLoading(true);
 
-    const response = await fetch('/api/users/signup',{
+    const response = await fetch('https://wsu-digital-73907ca0e2b2.herokuapp.com/api/users/signup',{
       method: 'POST',
       headers: {
         'Content-Type':'application/json'
@@ -22,18 +24,20 @@ export const useSignup = () => {
     if(!response.ok){
       setError(data.error);
       setIsLoading(false);
+      setSuccess(false);
     }
     if(response.ok){
       setError(false);
       setIsLoading(false);
+      setSuccess(data.message);
 
       // save user to localStorage
       localStorage.setItem('user',JSON.stringify(data));
 
       // update the auth context
-      dispatch({type:'LOGIN',payload:data});
+      dispatch({type:null ,payload:data});
     }
   }
 
-  return {signup,error,isLoading}
+  return {signup,error,isLoading,success}
 }

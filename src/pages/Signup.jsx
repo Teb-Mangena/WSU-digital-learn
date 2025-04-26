@@ -9,7 +9,7 @@ const Signup = () => {
   const [password,setPassword] = useState('');
 
   
-  const {signup,isLoading,error} = useSignup();
+  const {signup,isLoading,error,success} = useSignup();
 
 
   const handleSubmit = async (e) => {
@@ -61,7 +61,7 @@ const Signup = () => {
           />
 
           <button className="btn-signup" disabled={isLoading}>Sign up a Learner</button>
-
+          {success && <div className="succ-mssg">{success}</div>}
           {error && <div className='err-mssg'>{error}</div>}
         </form>
       </>

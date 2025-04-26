@@ -12,7 +12,7 @@ const MyAssignments = () => {
     async function fetchDocuments() {
       setIsLoading(true);
 
-      const response = await fetch('/api/documents');
+      const response = await fetch('https://wsu-digital-73907ca0e2b2.herokuapp.com/api/documents');
       const data = await response.json();
 
       if(!response.ok){

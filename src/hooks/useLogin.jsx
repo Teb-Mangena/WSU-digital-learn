@@ -10,7 +10,7 @@ export const useLogin = () => {
     setIsLoading(true);
     setError(null);
 
-    const response = await fetch('/api/users/login',{
+    const response = await fetch('https://wsu-digital-73907ca0e2b2.herokuapp.com/api/users/login',{
       method:'POST',
       headers:{
         'Content-Type':'application/json'
