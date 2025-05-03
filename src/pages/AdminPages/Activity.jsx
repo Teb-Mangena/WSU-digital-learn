@@ -11,8 +11,8 @@ const Activity = () => {
   const [success, setSuccess] = useState(null);
   const [topic, setTopic] = useState('');
   const [content, setContent] = useState('');
-  const [captureLink, setCaptureLink] = useState('');
   const [image, setImage] = useState(null);
+  const [pdfDocument, setPdfDocument] = useState(null);
 
   const { logout } = useLogout();
 
@@ -29,16 +29,21 @@ const Activity = () => {
       const formData = new FormData();
       formData.append('topic', topic);
       formData.append('content', content);
-      formData.append('link', captureLink); // Change 'captureLink' to 'link'
       if (image) {
         formData.append('image', image);
       }
+      if (pdfDocument) {
+        formData.append('pdf', pdfDocument);
+      }
 
       try {
-        const response = await fetch('https://wsu-digital-73907ca0e2b2.herokuapp.com/api/documents', {
-          method: 'POST',
-          body: formData,
-        });
+        const response = await fetch(
+          'http://localhost:5000/api/documents',
+          {
+            method: 'POST',
+            body: formData,
+          }
+        );
 
         const data = await response.json();
 
@@ -52,8 +57,8 @@ const Activity = () => {
           setSuccess(data.message || 'Document uploaded successfully');
           setTopic('');
           setContent('');
-          setCaptureLink('');
           setImage(null);
+          setPdfDocument(null);
         }
       } catch (err) {
         setError('Failed to upload document');
@@ -84,6 +89,7 @@ const Activity = () => {
             <label>Cover Image:</label>
             <input 
               type="file"
+              accept="image/*"
               onChange={(e) => setImage(e.target.files[0])}
             />
 
@@ -94,11 +100,11 @@ const Activity = () => {
               value={content}
             />
 
-            <label>Download document link:</label>
+            <label>Upload PDF Document:</label>
             <input 
-              type="text" 
-              onChange={(e) => setCaptureLink(e.target.value)}
-              value={captureLink}
+              type="file"
+              accept="application/pdf"
+              onChange={(e) => setPdfDocument(e.target.files[0])}
             />
 
             <button type="submit" disabled={isLoading}>
