@@ -38,7 +38,7 @@ const Activity = () => {
 
       try {
         const response = await fetch(
-          'https://wsu-digital-73907ca0e2b2.herokuapp.com/api/documents',
+          'https://wsu-dl-server.onrender.com/api/documents',
           {
             method: 'POST',
             body: formData,

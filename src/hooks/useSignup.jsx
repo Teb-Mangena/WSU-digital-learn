@@ -11,7 +11,7 @@ export const useSignup = () => {
   const signup = async (name,lastName,email,password) => {
     setIsLoading(true);
 
-    const response = await fetch('https://wsu-digital-73907ca0e2b2.herokuapp.com/api/users/signup',{
+    const response = await fetch('https://wsu-dl-server.onrender.com/api/users/signup',{
       method: 'POST',
       headers: {
         'Content-Type':'application/json'

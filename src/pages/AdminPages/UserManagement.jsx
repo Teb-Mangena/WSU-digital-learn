@@ -21,7 +21,7 @@ const UserManagement = () => {
     const fetchUsers = async () => {
       setIsLoading(true);
 
-      const response = await fetch('https://wsu-digital-73907ca0e2b2.herokuapp.com/api/users');
+      const response = await fetch('https://wsu-dl-server.onrender.com/api/users');
 
       const data = await response.json();
 

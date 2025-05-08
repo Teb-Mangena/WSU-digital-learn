@@ -16,7 +16,7 @@ const Documents = () => {
   useEffect(() => {
     const fetchDocuments = async () => {
       try {
-        const response = await fetch('https://wsu-digital-73907ca0e2b2.herokuapp.com/api/documents');
+        const response = await fetch('https://wsu-dl-server.onrender.com/api/documents');
         
         if (!response.ok) {
           throw new Error(`Failed to fetch documents: ${response.statusText}`);
