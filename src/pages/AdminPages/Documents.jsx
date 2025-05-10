@@ -3,6 +3,7 @@ import "../../styles/users/AdminDashboard.css";
 import { useLogout } from "../../hooks/useLogout";
 import AdminHeader from "../../components/admin-Components/AdminHeader";
 import AdminSidebar from "../../components/admin-Components/AdminSidebar";
+import DeleteOne from "../../components/admin-Components/DeleteOne";
 
 const Documents = () => {
   const [documents, setDocuments] = useState([]);
@@ -35,6 +36,10 @@ const Documents = () => {
 
     fetchDocuments();
   }, []);
+
+  const handleDeleteSuccess = (deletedId) => {
+    setDocuments(prev => prev.filter(doc => doc._id !== deletedId));
+  };
 
   return (
     <main className="web-container">
@@ -91,6 +96,7 @@ const Documents = () => {
                           >
                             Download
                           </a>
+                          <DeleteOne id={document._id} onDeleteSuccess={handleDeleteSuccess} />
                         </div>
                       )}
                     </div>
