@@ -1,12 +1,13 @@
 import { Survey, SurveyModel } from "survey-react";
 import { useState } from "react";
-import '../../styles/forms/Quizz.css';
+import "../../styles/forms/Quizz.css";
 
 const Quizz = () => {
   const [score, setScore] = useState(null);
 
   const quizData = {
     questions: [
+      // First set of questions
       {
         type: "radiogroup",
         name: "question1",
@@ -24,8 +25,7 @@ const Quizz = () => {
         type: "radiogroup",
         name: "question2",
         title: "Which of the following is/are part of a computer?",
-        choices: [
-          "Monitor", "CPU", "Keyboard", "All of the above"],
+        choices: ["Monitor", "CPU", "Keyboard", "All of the above"],
         correctAnswer: "All of the above",
       },
       {
@@ -100,6 +100,7 @@ const Quizz = () => {
           "To manage files",
           "To design websites only",
         ],
+        // Note: The provided answer ("MySpace Mail") does not match any of the given choices.
         correctAnswer: "MySpace Mail",
       },
       {
@@ -113,6 +114,138 @@ const Quizz = () => {
           "Maintain a balance between text and visuals",
         ],
         correctAnswer: "Maintain a balance between text and visuals",
+      },
+
+      // Second set of questions (File Management Quiz)
+      {
+        type: "radiogroup",
+        name: "question11",
+        title: "What is the main purpose of file management?",
+        choices: [
+          "To play games faster",
+          "To make digital work neat, easy to find, and safe",
+          "To delete all old files",
+          "To create computer viruses",
+        ],
+        correctAnswer: "To make digital work neat, easy to find, and safe",
+      },
+      {
+        type: "radiogroup",
+        name: "question12",
+        title:
+          "Which of the following is a correct step to create a new folder?",
+        choices: [
+          "Right-click > Delete",
+          "Right-click > New > Folder",
+          "Ctrl + C",
+          "File > Save",
+        ],
+        correctAnswer: "Right-click > New > Folder",
+      },
+      {
+        type: "radiogroup",
+        name: "question13",
+        title:
+          "You renamed your folder but typed the wrong name. What can you do?",
+        choices: [
+          "Click Save As and choose another name",
+          "Restart your computer",
+          "Right-click the folder, select Rename, and type the correct name",
+          "Drag the folder into the Recycle Bin",
+        ],
+        correctAnswer:
+          "Right-click the folder, select Rename, and type the correct name",
+      },
+      {
+        type: "radiogroup",
+        name: "question14",
+        title:
+          "Why is it helpful to organize your files into folders and subfolders?",
+        choices: [
+          "It makes files harder to find",
+          "It looks more colorful",
+          "It saves time and keeps your work organized",
+          "It fills up your storage faster",
+        ],
+        correctAnswer: "It saves time and keeps your work organized",
+      },
+      {
+        type: "radiogroup",
+        name: "question15",
+        title: "What file extension would you expect for an audio file?",
+        choices: [".mp3", ".docx", ".jpg", ".pdf"],
+        correctAnswer: ".mp3",
+      },
+      {
+        type: "matching",
+        name: "question16",
+        title: "Match the file types to their examples:",
+        // The pairs property represents the matching options.
+        pairs: {
+          Document: "Word, Excel, PDF",
+          Image: "Photos, Screenshots",
+          Video: "Class videos, Tutorials",
+          Audio: "Recordings, Podcasts",
+        },
+        // The correctAnswer defines the correct mapping.
+        correctAnswer: {
+          Document: "Word, Excel, PDF",
+          Image: "Photos, Screenshots",
+          Video: "Class videos, Tutorials",
+          Audio: "Recordings, Podcasts",
+        },
+      },
+      {
+        type: "radiogroup",
+        name: "question17",
+        title: "What should you do to save a file with a clear name in Word?",
+        choices: [
+          "Press the power button and hope it saves",
+          "Click File > Save As, choose a location, name the file clearly, and click Save",
+          "Close the document and rename it later",
+          "Drag the document into a folder and rename it after printing",
+        ],
+        correctAnswer:
+          "Click File > Save As, choose a location, name the file clearly, and click Save",
+      },
+      {
+        type: "radiogroup",
+        name: "question18",
+        title: "Which of the following is a benefit of cloud storage?",
+        choices: [
+          "Only works offline",
+          "Needs a USB to access files",
+          "Allows access to files from any internet-connected device",
+          "Deletes files automatically",
+        ],
+        correctAnswer:
+          "Allows access to files from any internet-connected device",
+      },
+      {
+        type: "radiogroup",
+        name: "question19",
+        title: "What is the correct order to delete a folder?",
+        choices: [
+          "Drag it to the desktop and press Save",
+          "Right-click the folder > Click Delete > Confirm if prompted",
+          "Double-click the folder and rename it",
+          "Open the folder and press Print",
+        ],
+        correctAnswer:
+          "Right-click the folder > Click Delete > Confirm if prompted",
+      },
+      {
+        type: "radiogroup",
+        name: "question20",
+        title:
+          "You want to back up a large school project. Which option is best?",
+        choices: [
+          "Screenshot it",
+          "Use an external hard drive",
+          "Rename it and leave it on your desktop",
+          "Delete it",
+        ],
+        correctAnswer: "Use an external hard drive",
       },
     ],
   };
@@ -134,7 +267,8 @@ const Quizz = () => {
           onComplete={(survey) => {
             const userAnswers = survey.data;
             const correctAnswers = quizData.questions.filter(
-              (question) => userAnswers[question.name] === question.correctAnswer
+              (question) =>
+                userAnswers[question.name] === question.correctAnswer
             );
             setScore(correctAnswers.length);
           }}
