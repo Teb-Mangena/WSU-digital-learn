@@ -21,6 +21,7 @@ import MyProfile from "./pages/Student/MyProfile";
 import MyCourses from "./pages/Student/MyCourses";
 import Quizz from "./pages/Student/Quizz";
 import Documents from "./pages/AdminPages/Documents";
+import PostQuizz from "./pages/AdminPages/PostQuizz";
 
 
 function App() {
@@ -76,6 +77,13 @@ function App() {
               path="/user-management"
               element={
                 user && user.role === "admin" ? <UserManagement /> : <Navigate to="/login" />
+              }
+            />
+
+            <Route
+              path="/upload-quiz"
+              element={
+                user && user.role === "admin" ? <PostQuizz /> : <Navigate to="/login" />
               }
             />
 

@@ -14,14 +14,14 @@ const StudentDashboard = () => {
 
     <section>
       <Link to='/my-assignments'>
-        <h2>Assignments</h2>
+        <h2>Uploaded Documents</h2>
         <p>Check for assignments</p>
       </Link>
     </section>
 
     <section>
         <Link to='/quizz'>
-          <h2>Quiz 1</h2>
+          <h2>Quizzes</h2>
           <p>Do uploaded quizes</p>
         </Link>
       </section>

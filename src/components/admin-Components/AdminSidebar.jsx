@@ -14,6 +14,9 @@ const AdminSidebar = ({ menuOpen, logout }) => {
           <Link to="/activity">Upload Documents</Link>
         </li>
         <li>
+          <Link to="/upload-quiz">Upload Quiz</Link>
+        </li>
+        <li>
           <Link to="/documents">Manage Documents</Link>
         </li>
         <li>

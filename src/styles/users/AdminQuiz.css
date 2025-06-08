@@ -1,0 +1,112 @@
+/* Base Styles */
+.quiz-form {
+  max-width: 640px;
+  margin: 2rem auto;
+  margin-top: 140px;
+  padding: 1.5rem;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-form h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.75rem;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #555;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Option row styling */
+.option-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.option-row input {
+  flex: 1;
+}
+
+/* Button Styles */
+button[type="submit"] {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .quiz-form {
+    margin: 1rem;
+    padding: 1rem;
+  }
+  
+  .quiz-form h2 {
+    font-size: 1.5rem;
+  }
+  
+  .form-group input,
+  .form-group select {
+    padding: 0.65rem;
+    font-size: 0.95rem;
+  }
+  
+  button[type="submit"] {
+    padding: 0.65rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .quiz-form {
+    margin: 0.5rem;
+    padding: 0.75rem;
+  }
+  
+  .option-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .option-row input {
+    margin-bottom: 0.5rem;
+  }
+}

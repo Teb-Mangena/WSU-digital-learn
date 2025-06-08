@@ -1,3 +1,68 @@
-.perc-cont {
-  margin-top: 20px;
+/* Add to your existing Quizz.css */
+.quiz-item {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+}
+
+.quiz-item h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.submit-section {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.submit-section button {
+  padding: 12px 25px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.submit-section button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.warning {
+  color: #ff9800;
+  margin-top: 10px;
+}
+
+.results {
+  text-align: center;
+  padding: 20px;
+  background-color: #e8f5e9;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.results h2 {
+  color: #2e7d32;
+}
+
+.results button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.error {
+  color: #f44336;
+  padding: 10px;
+  background-color: #ffebee;
+  border-radius: 4px;
+  margin-bottom: 15px;
 }
