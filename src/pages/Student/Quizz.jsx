@@ -17,7 +17,9 @@ const Quizz = () => {
       setError(null);
 
       try {
-        const response = await fetch("https://wsu-dl-server.onrender.com/api/quizz");
+        const response = await fetch(
+          "https://wsu-dl-server.onrender.com/api/quizz"
+        );
         const data = await response.json();
 
         if (!response.ok) {
@@ -25,10 +27,10 @@ const Quizz = () => {
         }
 
         setQuizzes(data);
-        
+
         // Initialize answers state
         const initialAnswers = {};
-        data.forEach(quiz => {
+        data.forEach((quiz) => {
           initialAnswers[quiz._id] = "";
         });
         setUserAnswers(initialAnswers);
@@ -44,9 +46,9 @@ const Quizz = () => {
 
   // Handle answer selection
   const handleAnswerSelect = (quizId, answer) => {
-    setUserAnswers(prev => ({
+    setUserAnswers((prev) => ({
       ...prev,
-      [quizId]: answer
+      [quizId]: answer,
     }));
   };
 
@@ -54,21 +56,26 @@ const Quizz = () => {
   const handleSubmit = async () => {
     setIsSubmitting(true);
     setSubmitError(null);
-    
+
     try {
       // Format answers for backend
-      const answersArray = Object.entries(userAnswers).map(([quizId, answer]) => ({
-        quizId,
-        answer
-      }));
+      const answersArray = Object.entries(userAnswers).map(
+        ([quizId, answer]) => ({
+          quizId,
+          answer,
+        })
+      );
 
-      const response = await fetch("https://wsu-dl-server.onrender.com/api/quizz/correct-count", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ answers: answersArray })
-      });
+      const response = await fetch(
+        "https://wsu-dl-server.onrender.com/api/quizz/correct-count",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ answers: answersArray }),
+        }
+      );
 
       const data = await response.json();
 
@@ -78,7 +85,7 @@ const Quizz = () => {
 
       setResults({
         correctCount: data.correctCount,
-        total: quizzes.length
+        total: quizzes.length,
       });
     } catch (error) {
       setSubmitError(error.message);
@@ -90,7 +97,7 @@ const Quizz = () => {
   // Reset the quiz to try again
   const handleReset = () => {
     const resetAnswers = {};
-    quizzes.forEach(quiz => {
+    quizzes.forEach((quiz) => {
       resetAnswers[quiz._id] = "";
     });
     setUserAnswers(resetAnswers);
@@ -99,25 +106,34 @@ const Quizz = () => {
   };
 
   // Check if all questions are answered
-  const allAnswered = Object.values(userAnswers).every(answer => answer !== "");
+  const allAnswered = Object.values(userAnswers).every(
+    (answer) => answer !== ""
+  );
 
   return (
     <div className="web-container">
       <div>
         <h1>Quizzes</h1>
-        
+
         {/* Error messages */}
         {error && <div className="error">{error}</div>}
         {submitError && <div className="error">{submitError}</div>}
-        
+
         {/* Loading state */}
-        {isLoading && <p>Loading...</p>}
-        
+        {isLoading && (
+          <div className="admin-loading">
+            <div className="loading-spinner"></div>
+            <p>Loading documents...</p>
+          </div>
+        )}
+
         {/* Results display */}
         {results && (
           <div className="results">
             <h2>Your Results</h2>
-            <p>You got {results.correctCount} out of {results.total} correct!</p>
+            <p>
+              You got {results.correctCount} out of {results.total} correct!
+            </p>
             <button onClick={handleReset}>Try Again</button>
           </div>
         )}
@@ -143,18 +159,20 @@ const Quizz = () => {
                 ))}
               </div>
             ))}
-            
+
             {/* Submit button */}
             <div className="submit-section">
-              <button 
+              <button
                 onClick={handleSubmit}
                 disabled={isSubmitting || !allAnswered}
               >
                 {isSubmitting ? "Submitting..." : "Submit Answers"}
               </button>
-              
+
               {!allAnswered && (
-                <p className="warning">Please answer all questions before submitting</p>
+                <p className="warning">
+                  Please answer all questions before submitting
+                </p>
               )}
             </div>
           </>
