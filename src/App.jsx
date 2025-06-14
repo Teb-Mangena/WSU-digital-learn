@@ -23,6 +23,7 @@ import Quizz from "./pages/Student/Quizz";
 import Documents from "./pages/AdminPages/Documents";
 import PostQuizz from "./pages/AdminPages/PostQuizz";
 import UploadedQuiz from "./pages/AdminPages/UploadedQuiz";
+import SubmittedQuiz from "./pages/AdminPages/SubmittedQuiz";
 
 
 function App() {
@@ -92,6 +93,13 @@ function App() {
               path="/register-user"
               element={
                 user && user.role === "admin" ? <RegisterUserPage /> : <Navigate to="/login" />
+              }
+            />
+
+            <Route
+              path="/learner-track"
+              element={
+                user && user.role === "admin" ? <SubmittedQuiz /> : <Navigate to="/login" />
               }
             />
 

@@ -49,13 +49,14 @@ const UploadedQuiz = () => {
         <div className="grid-admin-panel">
           <AdminSidebar menuOpen={menuOpen} logout={logout} />
           <div className="admin-content">
+            {quizzes && <h2>Uploaded Quizzes</h2>}
             {isLoading && <div className="admin-loading">
                 <div className="loading-spinner"></div>
-                <p>Loading documents...</p>
+                <p>Loading Quiz...</p>
               </div>
             }
             {error && <div className="err-mssg">{error}</div>}
-            {quizzes && <h2>Uploaded Quizzes</h2>}
+            
             {quizzes && quizzes.map(quiz => (
               <div className="quiz-content" key={quiz._id} style={{
                 backgroundColor:'lightgray',

@@ -23,6 +23,9 @@ const AdminSidebar = ({ menuOpen, logout }) => {
           <Link to="/documents">Manage Documents</Link>
         </li>
         <li>
+          <Link to="/learner-track">Learner's Progress</Link>
+        </li>
+        <li>
           <Link to="/register-user">Register Learners</Link>
         </li>
         <li>
