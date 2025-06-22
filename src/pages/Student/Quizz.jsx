@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useAuthContext } from "../../hooks/useAuthContext";
 import "../../styles/forms/Quizz.css";
 
 const Quizz = () => {
@@ -10,6 +11,9 @@ const Quizz = () => {
   const [submitError, setSubmitError] = useState(null);
   const [results, setResults] = useState(null);
 
+  const { user } = useAuthContext();
+  const token = user?.token;
+
   // Fetch quizzes from backend
   useEffect(() => {
     const fetchQuizz = async () => {
@@ -18,7 +22,12 @@ const Quizz = () => {
 
       try {
         const response = await fetch(
-          "https://wsu-dl-server.onrender.com/api/quizz"
+          "https://wsu-dl-server.onrender.com/api/quizz",
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
         );
         const data = await response.json();
 
@@ -41,8 +50,10 @@ const Quizz = () => {
       }
     };
 
-    fetchQuizz();
-  }, []);
+    if (token) {
+      fetchQuizz();
+    }
+  }, [token]);
 
   // Handle answer selection
   const handleAnswerSelect = (quizId, answer) => {
@@ -52,12 +63,17 @@ const Quizz = () => {
     }));
   };
 
-  // Submit answers to backend
+  // Submit answers to backend - FIXED PROPERTY NAMES
   const handleSubmit = async () => {
     setIsSubmitting(true);
     setSubmitError(null);
 
     try {
+      // Validate user information exists - FIXED PROPERTY NAME
+      if (!user || !user.name || !user.lastName) {
+        throw new Error("User information is missing. Please ensure you're logged in properly.");
+      }
+
       // Format answers for backend
       const answersArray = Object.entries(userAnswers).map(
         ([quizId, answer]) => ({
@@ -67,13 +83,18 @@ const Quizz = () => {
       );
 
       const response = await fetch(
-        "https://wsu-dl-server.onrender.com/api/quizz/correct-count",
+        "https://wsu-dl-server.onrender.com/api/quizz/submit",
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
           },
-          body: JSON.stringify({ answers: answersArray }),
+          body: JSON.stringify({
+            answers: answersArray,
+            name: user.name,
+            surname: user.lastName
+          }),
         }
       );
 
@@ -83,10 +104,8 @@ const Quizz = () => {
         throw new Error(data.error || "Failed to submit answers");
       }
 
-      setResults({
-        correctCount: data.correctCount,
-        total: quizzes.length,
-      });
+      // Store entire response in results
+      setResults(data);
     } catch (error) {
       setSubmitError(error.message);
     } finally {
@@ -131,9 +150,10 @@ const Quizz = () => {
         {results && (
           <div className="results">
             <h2>Your Results</h2>
-            <p>
-              You got {results.correctCount} out of {results.total} correct!
-            </p>
+            <p>Name: {results.name} {results.surname}</p>
+            <p>Score: {results.score} out of {results.total}</p>
+            <p>Percentage: {results.percentage}%</p>
+            <p>Completed at: {new Date(results.timestamp).toLocaleString()}</p>
             <button onClick={handleReset}>Try Again</button>
           </div>
         )}
