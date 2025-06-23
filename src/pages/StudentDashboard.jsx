@@ -26,6 +26,13 @@ const StudentDashboard = () => {
         </Link>
       </section>
 
+    <section>
+      <Link to='/user-results'>
+        <h2>My Quiz Results</h2>
+        <p>Check for your results</p>
+      </Link>
+    </section>
+
       <section>
         <Link to='/my-courses'>
           <h2>Courses</h2>

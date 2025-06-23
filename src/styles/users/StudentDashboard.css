@@ -46,3 +46,79 @@ a {
 a:hover h2 {
   text-decoration: underline;
 }
+
+/* FOR STUDENT RESULTS */
+
+.loading, .error {
+  padding: 20px;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.error {
+  color: #ff0000;
+}
+
+.quiz-results-list {
+  margin-top: 30px;
+}
+
+.quiz-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.quiz-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.score {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.score.perfect {
+  color: #2ecc71;
+}
+
+.quiz-details ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.quiz-details li {
+  padding: 5px 0;
+  border-bottom: 1px dashed #f0f0f0;
+}
+
+.quiz-details li:last-child {
+  border-bottom: none;
+}
+
+.correct {
+  color: #27ae60;
+}
+
+.incorrect {
+  color: #e74c3c;
+}
+
+.answer-text {
+  display: inline-block;
+  margin-left: 10px;
+  color: #333;
+}
+
+.quiz-summary {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}

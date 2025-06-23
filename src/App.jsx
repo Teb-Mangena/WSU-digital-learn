@@ -24,6 +24,7 @@ import Documents from "./pages/AdminPages/Documents";
 import PostQuizz from "./pages/AdminPages/PostQuizz";
 import UploadedQuiz from "./pages/AdminPages/UploadedQuiz";
 import SubmittedQuiz from "./pages/AdminPages/SubmittedQuiz";
+import MyQuizzResults from "./pages/Student/MyQuizzResults"
 
 
 function App() {
@@ -150,6 +151,13 @@ function App() {
               path="/quizz"
               element={
                 user && user.role === "user" ? <Quizz /> : <Navigate to="/login" />
+              }
+            />
+
+            <Route
+              path="/user-results"
+              element={
+                user && user.role === "user" ? <MyQuizzResults /> : <Navigate to="/login" />
               }
             />
 

@@ -9,6 +9,8 @@ const SubmittedQuiz = () => {
   const [results, setResults] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [selectedResult, setSelectedResult] = useState(null);
+  const [showModal, setShowModal] = useState(false);
   const { logout } = useLogout();
 
   const toggleMenu = () => {
@@ -42,6 +44,18 @@ const SubmittedQuiz = () => {
   const formatDate = (dateString) => {
     const options = { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' };
     return new Date(dateString).toLocaleDateString(undefined, options);
+  };
+
+  // Handle view answers button click
+  const handleViewAnswers = (result) => {
+    setSelectedResult(result);
+    setShowModal(true);
+  };
+
+  // Close modal
+  const closeModal = () => {
+    setShowModal(false);
+    setSelectedResult(null);
   };
 
   return (
@@ -106,7 +120,7 @@ const SubmittedQuiz = () => {
                         <td>
                           <button 
                             className="view-details-btn"
-                            onClick={() => console.log("View details for", result._id)}
+                            onClick={() => handleViewAnswers(result)}
                           >
                             View Answers
                           </button>
@@ -127,6 +141,62 @@ const SubmittedQuiz = () => {
           </div>
         </div>
       </div>
+
+      {/* Answer Details Modal */}
+      {showModal && selectedResult && (
+        <div className="modal-backdrop">
+          <div className="answers-modal">
+            <div className="modal-header">
+              <h3>
+                {selectedResult.name} {selectedResult.surname}'s Answers
+                <span className="modal-score">
+                  Score: {selectedResult.score}/{selectedResult.total}
+                  ({Math.round(selectedResult.score/selectedResult.total * 100)}%)
+                </span>
+              </h3>
+              <button className="close-modal" onClick={closeModal}>
+                &times;
+              </button>
+            </div>
+            
+            <div className="modal-body">
+              <div className="quiz-meta">
+                <p>Submitted on: {formatDate(selectedResult.createdAt)}</p>
+                <p>User ID: {selectedResult.userId}</p>
+              </div>
+              
+              <div className="answers-list">
+                {selectedResult.answers.map((answer, index) => (
+                  <div 
+                    key={answer._id} 
+                    className={`answer-item ${answer.isCorrect ? 'correct' : 'incorrect'}`}
+                  >
+                    <div className="question-header">
+                      <strong>Question {index + 1}:</strong>
+                      <span className="answer-status">
+                        {answer.isCorrect ? '✓ Correct' : '✗ Incorrect'}
+                      </span>
+                    </div>
+                    
+                    <div className="answer-detail">
+                      <p><strong>User's Answer:</strong> {answer.userAnswer}</p>
+                      {!answer.isCorrect && (
+                        <p><strong>Correct Answer:</strong> {answer.correctAnswer}</p>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <div className="modal-footer">
+              <button className="close-btn" onClick={closeModal}>
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 };
