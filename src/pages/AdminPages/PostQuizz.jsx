@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useAuthContext } from '../../hooks/useAuthContext';
 import '../../styles/users/AdminQuiz.css'
 
 const PostQuizz = () => {
@@ -7,6 +8,9 @@ const PostQuizz = () => {
     answers: ['', '', '', ''],
     correctAnswer: ''
   });
+
+  const {user} = useAuthContext();
+  const token = user?.token;
 
   const giveQuizz = async (e) => {
     e.preventDefault();
@@ -21,7 +25,8 @@ const PostQuizz = () => {
       const response = await fetch('https://wsu-dl-server.onrender.com/api/quizz', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Authorization':`Bearer ${token}`
         },
         body: JSON.stringify(quizData)
       });

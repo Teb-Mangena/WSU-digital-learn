@@ -3,12 +3,16 @@ import "../../styles/users/AdminDashboard.css";
 import { useLogout } from "../../hooks/useLogout";
 import AdminHeader from "../../components/admin-Components/AdminHeader";
 import AdminSidebar from "../../components/admin-Components/AdminSidebar";
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 const UploadedQuiz = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [error, setError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [quizzes, setQuizzes] = useState([]);
+
+  const {user} = useAuthContext();
+  const token = user?.token;
   
   const { logout } = useLogout();
 
@@ -21,7 +25,11 @@ const UploadedQuiz = () => {
       setIsLoading(true);
 
       try {
-        const response = await fetch('https://wsu-dl-server.onrender.com/api/quizz');
+        const response = await fetch('https://wsu-dl-server.onrender.com/api/quizz',{
+          headers: {
+          'Authorization':`Bearer ${token}`
+        },
+        });
         const data = await response.json();
 
         if(!response.ok){
@@ -39,7 +47,7 @@ const UploadedQuiz = () => {
     }
 
     postedQuiz();
-  },[]);
+  },[token]);
 
   return (
     <main className="web-container">
